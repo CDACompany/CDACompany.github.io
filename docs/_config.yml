@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-
+domain: cdacompany.github.io
 title: CDA Company - Vers un nouveau jour
 email: devil.arthur.user@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Vers un nouveau jour -
   Ce site vous permet de récupérer les coordonées GPS du prochain lieu de rendez - vous.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/docs" # the subpath of your site, e.g. /blog
+url: "cdacompany.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  CDACompany
 
 # Build settings
