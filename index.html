@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head>
+<h1> Hello there</h1>
+</head>
 <body>
-<h1> Hello there!</h1>
+
 <script>
 let word="///hope.began.stole";
 let keyword="LECONTE";
@@ -20,11 +23,7 @@ for (i in L) {
   x=String.fromCharCode(L[i]);
   gps+=x;
 }
-
-var b = Buffer.from(gps, 'base64')
-var s = b.toString();
-
-document.write(b+"<br>"+s);
+document.write(gps);
 </script>
 
 </body>
