@@ -6,25 +6,29 @@
 <body>
 
 <script>
-let word="///hope.began.stole";
-let keyword="LECONTE";
-let b64=btoa(keyword+word+keyword);
-let key=[26, 1, 53, 49, 26, 74, 108, 100, 28, 23, 113, 12, 0, 113, 41, 12, 47, 45, 0, 2, 23, 57, 7, 23, 20, 48, 9, 72, 45, 119, 49, 3, 44, 61, 15, 124, 28, 17, 7, 42, 24, 47, 19, 60];
 
-let L=[];
-for (let i=0; i < b64.length; i++) {
-  xor=key[i % key.length] ^ b64.charCodeAt(i);
-  L[i] = xor;
-}
+function fgps(keyword, word) {
+  let b64=btoa(keyword+word+keyword);
+  let key=[26, 1, 53, 49, 26, 74, 108, 100, 28, 23, 113, 12, 0, 113, 41, 12, 47, 45, 0, 2, 23, 57, 7, 23, 20, 48, 9, 72, 45, 119, 49, 3, 44, 61, 15, 124, 28, 17, 7, 42, 24, 47, 19, 60];
+  let L=[];
+  for (let i=0; i < b64.length; i++) {
+    xor=key[i % key.length] ^ b64.charCodeAt(i);
+    L[i] = xor;
+  }
+  let gps_txt = "";
+  for (i in L) {
+    x=String.fromCharCode(L[i]);
+    gps_txt+=x;
+  }
+  return atob(gps_txt.split("=")[0]);
+  }
 
-let gps = "";
-//1: Recup. les lettres. 2: b64decode
-for (i in L) {
-  x=String.fromCharCode(L[i]);
-  gps+=x;
-}
-document.write(gps);
+
+let w="///hope.began.stole";
+let k="LECONTE";
+
+let gps_decode = fgps(k, w);
+document.write(gps_decode);
 </script>
-
 </body>
 </html>
